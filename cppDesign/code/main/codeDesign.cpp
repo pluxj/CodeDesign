@@ -1,28 +1,40 @@
 // codeDesign.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
 //
 
-#include "pch.h"
+
 #include <iostream>
-#include "beverage.h"
-#include "command.h"
+
+#include "../src/command.h"
 using namespace std;
+
+int test(int i,int j)
+{
+    int value = 6;
+    auto func = [&value](int x,int y){
+        return x+y+value;
+    };
+    return func(i,j);
+}
 int main()
 {
-    CBeverage *beverage = new Espress();
-    cout << beverage->getDescription() << "   price:" << beverage->cost() << endl;
-    beverage = new Mocha(beverage);
-    cout << "desc:"<<beverage->getDescription() << "   price:" << beverage->cost() << endl;
-    beverage = new Mocha(beverage);
-    cout << "desc:"<<beverage->getDescription() << "   price:" << beverage->cost() << endl;
-    
-
+//    CBeverage *beverage = new Espress();
+//    cout << beverage->getDescription() << "   price:" << beverage->cost() << endl;
+//    beverage = new Mocha(beverage);
+//    cout << "desc:"<<beverage->getDescription() << "   price:" << beverage->cost() << endl;
+//    beverage = new Mocha(beverage);
+//    cout << "desc:"<<beverage->getDescription() << "   price:" << beverage->cost() << endl;
+//    int value = 5;
+//    auto func = [&value](int x,int y){
+//        return x+y+value;
+//    };
+    cout << test(4,5) << endl;
 	//COMMAND DESIGN
-	/*CLight light;
+	CLight light;
 	CLightOnCommand lightCommand(&light);
 	CButton button;
 	button.SetCommand(&lightCommand);
-	button.Press();*/
-	system("pause");
+	button.Press();
+	//system("pause");
 }
 
 // 运行程序: Ctrl + F5 或调试 >“开始执行(不调试)”菜单
