@@ -1,25 +1,14 @@
 PROJECT(code_design)
 
 
-cmake_minimum_required(VERSION 3.12)
+cmake_minimum_required(VERSION 2.6)
 set(CMAKE_CXX_STANDARD 11)
 
-message(STATUS " hahah ${CMAKE_SOURCE_DIR}")
+include_directories(./code/src/)
 
-set(SRC_PATH ${CMAKE_SOURCE_DIR}/code/src/)
-set(MAIN_PATH ${CMAKE_SOURCE_DIR}/code/main/)
+add_subdirectory(test/test_command)
+add_subdirectory(test/test_decorator)
+add_subdirectory(test/test_observer)
+add_subdirectory(test/test_state)
 
-file(GLOB SRC ${SRC_PATH}/*.cpp /*.h)
-message(STATUS "src:${SRC}")
-
-file(GLOB MAIN ${MAIN_PATH}/*.cpp *.h)
-message(STATUS "main:${MAIN}")
-
-MESSAGE(STATUS "cpp: ${CMAKE_SOURCE_DIR}")
-
-include_directories(
-        ${PROJECT_NAME}/code/src
-)
-
-add_executable(code_design ${SRC} ${MAIN})
 
