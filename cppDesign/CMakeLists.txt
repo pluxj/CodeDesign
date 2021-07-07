@@ -10,5 +10,6 @@ add_subdirectory(test/test_command)
 add_subdirectory(test/test_decorator)
 add_subdirectory(test/test_observer)
 add_subdirectory(test/test_state)
+add_subdirectory(test/test_iterator)
 
 
