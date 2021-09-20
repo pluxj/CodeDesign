@@ -62,7 +62,7 @@ public:
 
 	bool has_next()
 	{
-		if (position >= menulist_.length())
+		if (position >= menulist_.size())
 		{
 			return false;
 		}
